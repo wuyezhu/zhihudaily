@@ -1,0 +1,30 @@
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.5.0'
+        classpath 'me.tatarka:gradle-retrolambda:3.2.5'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+repositories{
+    mavenCentral()
+}
+
+
+apply plugin: 'java' //or apply plugin: 'java'
+apply plugin: 'me.tatarka.retrolambda'
+
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
