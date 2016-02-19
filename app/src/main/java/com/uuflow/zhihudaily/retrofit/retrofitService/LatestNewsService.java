@@ -3,6 +3,7 @@ package com.uuflow.zhihudaily.retrofit.retrofitService;
 import com.uuflow.zhihudaily.model.LatestNews;
 
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import rx.Observable;
 
 /**
@@ -13,4 +14,7 @@ import rx.Observable;
 public interface LatestNewsService {
     @GET("news/latest")
     Observable<LatestNews> getLatestNews();
+
+    @GET("news/before/{date}")
+    Observable<LatestNews>  getBeforeNews(@Path("date") String date);
 }
